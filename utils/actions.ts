@@ -562,7 +562,6 @@ export const createOrderAction = async (prevState: any, formData: FormData) => {
     });
     orderId = order.id;
   } catch (error) {
-    console.log("error", error);
     return renderError(error);
   }
   redirect(`/checkout?orderId=${orderId}&cartId=${cartId}`);

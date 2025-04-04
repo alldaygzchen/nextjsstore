@@ -57,6 +57,7 @@ export const POST = async (req: NextRequest) => {
     });
     return Response.json({ clientSecret: session.client_secret });
   } catch (error) {
+    console.log("error", error);
     return Response.json(null, {
       status: 500,
       statusText: "Internal Server Error",
