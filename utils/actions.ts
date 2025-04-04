@@ -25,7 +25,6 @@ const getAdminUser = async () => {
 };
 
 const renderError = (error: unknown): { message: string } => {
-  console.log("error", error);
   return {
     message: error instanceof Error ? error.message : "an error occurred",
   };
@@ -563,6 +562,7 @@ export const createOrderAction = async (prevState: any, formData: FormData) => {
     });
     orderId = order.id;
   } catch (error) {
+    console.log("error", error);
     return renderError(error);
   }
   redirect(`/checkout?orderId=${orderId}&cartId=${cartId}`);
