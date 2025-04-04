@@ -25,6 +25,7 @@ const getAdminUser = async () => {
 };
 
 const renderError = (error: unknown): { message: string } => {
+  console.log("error", error);
   return {
     message: error instanceof Error ? error.message : "an error occurred",
   };
